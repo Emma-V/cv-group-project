@@ -6,6 +6,10 @@ Applied Computer Vision · AI & Deep Learning · Reichman University
 
 **Team:** Emma Weinstein · Tal Matsil · Tamar Telele
 
+**Colab:** [Open the main notebook in Google Colab](https://colab.research.google.com/drive/1hcp8t59-TNn1Oq7oba84EWkp9QUrWlLr)
+
+**Deliverables:** [Short report (PDF)](Wheelchair_Detection_Short_Report.pdf) · [Class presentation (PPTX)](Wheelchair_Detection_Presentation.pptx)
+
 ---
 
 ## 1. Project Summary
@@ -43,6 +47,8 @@ The selected model reaches **F1 = 0.946** on `people_wheelchair` and **mAP@0.5 =
 ├── README.md
 ├── requirements.txt
 ├── Final_Version.ipynb                          # main notebook — end-to-end pipeline
+├── Wheelchair_Detection_Short_Report.pdf        # 2–3 page short report
+├── Wheelchair_Detection_Presentation.pptx       # class presentation slides
 ├── experiments/                                 # supporting notebooks, run before the final one
 │   ├── ModelAHyperParameterSearchPipeline.ipynb # Model A: sequential per-hyperparameter search (§4.2)
 │   ├── ModelBHyperParameterSearchPipeline.ipynb # Model B: Successive Halving search (§4.2)
@@ -419,6 +425,8 @@ The practical consequence: **the reported `person` recall of 0.666 is a lower bo
 ### Reading the results — no setup required
 
 [`Final_Version.ipynb`](Final_Version.ipynb) is committed with all outputs saved. Open it in the repository to see every plot, metric, and prediction exactly as it was produced on the final run — no environment, no GPU, no dataset download needed.
+
+**Fastest path:** open the notebook directly in [Google Colab](https://colab.research.google.com/drive/1hcp8t59-TNn1Oq7oba84EWkp9QUrWlLr) (GPU runtime recommended).
 
 ### Running it yourself
 
