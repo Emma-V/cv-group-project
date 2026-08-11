@@ -1,0 +1,3 @@
+# Local copies of notebooks that still carry their full embedded outputs.
+# Too large for the repo — keep the stripped version tracked instead.
+*.with-outputs.ipynb
