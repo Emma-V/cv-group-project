@@ -67,7 +67,7 @@ The selected model reaches **F1 = 0.946** on `people_wheelchair` and **mAP@0.5 =
 
 **Trained weights are not committed.** The notebook writes them to `runs/detect/Model_A_best/weights/best.pt` and `runs/detect/Model_B_best/weights/best.pt`; re-running §8 reproduces them.
 
-**Open in Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Emma-V/cv-group-project/blob/main/Final_Version.ipynb)
+**The notebook is committed with all cell outputs intact** — every figure, table, and number in this README can be verified by reading `Final_Version.ipynb` directly, without running anything.
 
 ---
 
@@ -416,17 +416,13 @@ The practical consequence: **the reported `person` recall of 0.666 is a lower bo
 
 ## 8. Setup Instructions
 
-### Option A — Google Colab (recommended; this is how the project was run)
+### Reading the results — no setup required
 
-1. Open the notebook: [`Final_Version.ipynb`](Final_Version.ipynb) — or use the Colab badge in §2.
-2. Set the runtime to **GPU** (`Runtime → Change runtime type → T4 GPU`).
-3. Provide your Roboflow API key as a Colab secret (see the security note below), then run all cells top to bottom.
+[`Final_Version.ipynb`](Final_Version.ipynb) is committed with all outputs saved. Open it in the repository to see every plot, metric, and prediction exactly as it was produced on the final run — no environment, no GPU, no dataset download needed.
 
-Full end-to-end runtime is roughly **1.5–2 hours** on a T4 (≈ 27 min for Model A + ≈ 31 min for Model B, plus calibration sweeps and error analysis).
+### Running it yourself
 
-### Option B — Local
-
-Requires Python 3.10+ and a CUDA-capable GPU (CPU works but is impractically slow for training).
+Requires Python 3.10+ and a CUDA-capable GPU (CPU works but is impractically slow for training). Full end-to-end runtime is roughly **1.5–2 hours** on a Tesla T4 (≈ 27 min for Model A + ≈ 31 min for Model B, plus calibration sweeps and error analysis).
 
 ```bash
 git clone https://github.com/Emma-V/cv-group-project.git
@@ -449,7 +445,7 @@ dataset = project.version(5).download("yolov8")
 print(dataset.location)
 ```
 
-> ⚠️ **Security note.** Do **not** hard-code the Roboflow API key in the notebook. Read it from an environment variable (`ROBOFLOW_API_KEY`) or a Colab secret. A key committed to a public repository must be rotated in the Roboflow account settings.
+> ⚠️ **Security note.** Do **not** hard-code the Roboflow API key in the notebook. Read it from an environment variable (`ROBOFLOW_API_KEY`). A key committed to a public repository must be rotated in the Roboflow account settings.
 
 ### Reproducing training
 
