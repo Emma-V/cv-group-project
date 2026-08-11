@@ -1,0 +1,41 @@
+# Wheelchair User Detection — Python dependencies
+#
+# Versions below are the ones the final notebook actually ran on
+# (Google Colab, Python 3.12.13, Tesla T4, CUDA 12.8).
+# Pinned where the version matters for reproducing the reported numbers,
+# loose where it does not.
+#
+#   pip install -r requirements.txt
+#
+# NOTE ON TORCH: the pinned build below is the CUDA 12.8 wheel used in Colab.
+# On a local machine, install torch first from https://pytorch.org for your own
+# CUDA version, then run this file. On Colab, torch is preinstalled — do not
+# reinstall it.
+
+# ── Core: model + training ────────────────────────────────────────────────
+ultralytics==8.4.117
+torch>=2.1                       # ran on 2.11.0+cu128
+torchvision>=0.16
+
+# ── Dataset download ──────────────────────────────────────────────────────
+roboflow==1.4.0
+
+# ── Data handling and configuration ───────────────────────────────────────
+numpy>=1.26,<2.4                 # ran on 2.0.2
+pandas>=2.0
+PyYAML>=6.0
+
+# ── Images ────────────────────────────────────────────────────────────────
+opencv-python-headless==4.10.0.84   # version required by roboflow 1.4.0
+Pillow>=10.0
+
+# ── Integrity checks (near-duplicate / leakage detection) ─────────────────
+ImageHash>=4.3
+
+# ── Plots and analysis ────────────────────────────────────────────────────
+matplotlib>=3.8
+scipy>=1.11                      # Spearman rank correlation (Model B search audit)
+
+# ── Notebook environment ──────────────────────────────────────────────────
+ipython>=8.0
+jupyter>=1.0                     # not needed on Colab
